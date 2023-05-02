@@ -1,0 +1,13 @@
+version: '3'
+services:
+  database:
+    image: "postgres:latest"
+    restart: always
+    environment:
+      - POSTGRES_DB=simple_bank
+      - POSTGRES_USER='diva'
+      - POSTGRES_PASSWORD='diva123'
+    ports:
+      - '5432:5432'
+    volumes: 
+      - ./data/pgdata:/var/lib/postgresql/data
